@@ -7,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Register the SupervisorService with its interface for DI
 builder.Services.AddHttpClient<ISupervisorService, SupervisorService>();
+
+builder.Services.AddScoped<INotificationService, NotificationService>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
